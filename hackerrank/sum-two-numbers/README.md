@@ -14,3 +14,26 @@ Testing the addition logic directly was problematic when calling the decorated f
 Having the `output` and `exit_code` from the `CliRunner` runtime makes behavioral testing much quicker.
 
 
+## Example run output
+
+```
+$ make run
+poetry run python3 app.py 1 2
+3
+```
+
+## Example test output
+
+```
+$ make test
+poetry run pytest .
+======================================================================================== test session starts =========================================================================================
+platform linux -- Python 3.10.12, pytest-8.3.2, pluggy-1.5.0
+rootdir: /home/rramirez/code/sandbox/hackerrank/sum-two-numbers
+configfile: pyproject.toml
+collected 3 items
+
+test_sums.py ...                                                                                                                                                                               [100%]
+
+========================================================================================= 3 passed in 0.04s ==========================================================================================
+```
