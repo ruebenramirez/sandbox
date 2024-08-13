@@ -1,5 +1,6 @@
 import click
 from click.testing import CliRunner
+import pytest
 
 from app import myadd, myadd_io_handler
 
@@ -12,6 +13,12 @@ def test_myadd():
     nums = (1, 2)
     total = myadd(nums)
     assert total == 3
+
+
+def test_myadd_bad_input():
+    with pytest.raises(TypeError) as excinfo:
+        bad_nums = ('r', 'u')
+        myadd(bad_nums)
 
 
 def test_click_wrapper_around_myadd():

@@ -1,7 +1,7 @@
 
 
 test:
-	poetry run pytest .
+	poetry run pytest --mypy .
 	# uncomment to display debug statements
 	# poetry run pytest -s .
 
