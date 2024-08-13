@@ -10,15 +10,18 @@ def myadd(nums: Tuple[int, ...]):
     mysum = 0
     for num in nums:
         mysum += num
-    click.echo(mysum)
+    return mysum
 
 
 @click.command()
 @click.argument('nums', nargs=2, type=int)
-def myadd_input_handler(nums: Tuple[int, ...]):
-    '''Grab input of 2 numbers and forward them along to our myadd logic.'''
-    myadd(nums)
+def myadd_io_handler(nums: Tuple[int, ...]):
+    '''Grab input of 2 numbers and forward them along to our myadd logic.
+
+    Print the calculated total.'''
+    mysum = myadd(nums)
+    click.echo(mysum)
 
 
 if __name__ == '__main__':
-    myadd_input_handler()
+    myadd_io_handler()
